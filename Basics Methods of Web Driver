@@ -1,0 +1,31 @@
+//Created by Md Arifuzzaman for Google Chrome
+//Created 5/8/2020
+//For Practice
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstTestCase {
+
+	public static void main(String[] args) {
+
+
+		
+		System.setProperty("webdriver.chrome.driver", "//Users//mdarifuzzaman//Documents//chromedriver"); //this is the template for all browser just replace the driver
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("http://google.com");// this goes to the web page
+		System.out.println(driver.getTitle());//this gets the title of the page
+		
+		System.out.println(driver.getCurrentUrl());// this gets the url of the website
+		
+		//System.out.println(driver.getPageSource());//this code will get all the page source and source code.
+		
+		driver.get("https://yahoo.com");
+		driver.navigate().back();
+		driver.close();//closes current broweser
+		
+		//driver.quit();//will close all browser by selenium 
+	}
+
+}
