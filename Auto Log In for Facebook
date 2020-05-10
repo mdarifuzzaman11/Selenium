@@ -1,0 +1,31 @@
+//Created by Md Arifuzzaman for Google Chrome Only 
+//Created 5/10/2020
+//For auto log in to facebook by just replacing email and password below 
+//below I created a program that can log into facebook automatically without having to put email and password multiple time.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FacebookAutoLogin {
+
+	public static void main(String[] args) {
+
+
+		
+		System.setProperty("webdriver.chrome.driver", "//Users//mdarifuzzaman//Documents//chromedriver"); //this is the template for all browser just replace the driver
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("http://facebook.com");// this goes to the web page
+		driver.findElement(By.id("email")).sendKeys("This is where you put your email");;// the .id can change
+		driver.findElement(By.id("pass")).sendKeys("this is where you put your password");;// this moves to password and puts your password
+		driver.findElement(By.id("u_0_b")).click();// this code clicks on the Log in button on facebook to log you in.
+		
+		//driver.close();//this will close the browser after its done only enable it if you want to exit the browser
+
+	
+	}
+
+}
