@@ -1,0 +1,37 @@
+//Created by Md Arifuzzaman for Google Chrome
+//Created 5/15/2020
+//For auto log in to TWITTER by just replacing email and password.
+//This Code will only login to Twitter automatically 
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TwitterAutoLogin {
+
+	public static void main(String[] args) {
+
+
+		
+		System.setProperty("webdriver.chrome.driver", "//Users//mdarifuzzaman//Documents//chromedriver"); //this is the template for all browser just replace the driver
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://twitter.com");// this goes to the web page
+
+
+
+
+driver.findElement(By.xpath("//input[@name='session[username_or_email]']")).sendKeys("unitedsaves");
+driver.findElement(By.xpath("//input[@name='session[password]']")).sendKeys("Arif2020$");
+driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div[2]/div/div[2]/div/div/div/div[1]/section/form/div/div[3]")).click();
+
+
+
+
+	
+	
+	}
+
+}
