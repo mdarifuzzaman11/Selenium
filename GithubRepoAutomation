@@ -1,0 +1,47 @@
+//Created by Md Arifuzzaman for Google Chrome
+//Created 5/17/2020
+//Project#{01} 
+//Version: {0.1}
+//For auto log in to Github by just replacing email and password.
+//This Code will login to Github automatically and click on a repo where you want to add your code. 
+//I created this to save me the extra step to log into github and clicking on the repo.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class GitHubAutoLoginAndClickRepo2 {
+
+  public static void main(String[] args) {
+  
+  
+      
+          System.setProperty("webdriver.chrome.driver", "//Users//mdarifuzzaman//Documents//chromedriver"); //this is the template for all browser just replace the driver,dont forget to replace this with your own.
+              
+                  WebDriver driver=new ChromeDriver();//this is the browser im using
+                      
+                          driver.get("https://github.com");// this goes to the web page
+                          
+                          
+                              driver.findElement(By.xpath("/html/body/div[1]/header/div/div[2]/div[2]/a[1]")).click();//this will click on the Sign in Button
+                                  driver.findElement(By.xpath("//*[@id=\"login_field\"]")).sendKeys("arif2020r@gmail.com");//this will input your email, dont forget to replace this with your own.
+                                      driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Thisistest2020");//this will input your password, dont forget to replace this with your own.
+                                          driver.findElement(By.xpath("//*[@id=\"login\"]/form/div[4]/input[9]")).click();//this will click on Sign In
+                                              driver.findElement(By.xpath("//*[@id=\"repos-container\"]/ul/li[1]/div/a/span[2]")).click();// this will click on your repo make sure to change this.
+                                                  driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div[3]/div[2]/form/button")).click();//this will click on "Create new file"
+                                                      driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[1]/span/input")).click();//this will click on title 
+                                                          driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[1]/span/input")).sendKeys("GithubRepoAutomation");//this will title what you want so make sure to change what ever is inside ""
+                                                              driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[5]/div[2]/div/div[5]/div[1]/div/div/div/div[5]/div/pre")).click();// this will click on the text field.
+                                                                  driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[5]/div[2]/div/div[5]/div[1]/div/div/div/div[5]/div/pre")).sendKeys("Paste what you want to upload to GitHub");// this will paste your Work so make sure to replace what ever you want inside the " "
+                                                                  
+                                                                      
+                                                                          driver.findElement(By.xpath("//*[@id=\"submit-file\"]")).click(); //this will click on Commit New File and save your work
+                                                                          
+                                                                            
+                                                                              //the purpose of this project is to eliminate clicking steps and copy pasting to saving you time :)
+                                                                                //Project Created By Md Arifuzzaman
+                                                                                  //Date: 05/17/2020
+                                                                                    }
+                                                                                    
+                                                                                    }
